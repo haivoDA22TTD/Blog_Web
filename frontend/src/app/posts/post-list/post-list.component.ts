@@ -29,6 +29,15 @@ export class PostListComponent implements OnInit {
   constructor(private postService: PostService) {}
 
   ngOnInit() {
-    this.postService.getAllPosts().subscribe(data => this.posts = data);
-  }
+  this.postService.getAllPosts().subscribe({
+    next: data => {
+      console.log('Dữ liệu bài viết:', data);
+      this.posts = data;
+    },
+    error: error => {
+      console.error('Lỗi khi lấy bài viết:', error);
+    }
+  });
+}
+
 }

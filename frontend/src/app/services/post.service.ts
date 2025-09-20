@@ -1,21 +1,26 @@
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
 
-@Injectable({ providedIn: 'root' })
+@Injectable({
+  providedIn: 'root'
+})
 export class PostService {
   private apiUrl = 'http://localhost:8080/api/posts';
 
   constructor(private http: HttpClient) {}
 
-  getAllPosts() {
-    return this.http.get<any[]>(this.apiUrl);
+  createPost(post: any): Observable<any> {
+    const token = localStorage.getItem('token'); // Bạn đã login rồi đúng không?
+
+    const headers = new HttpHeaders({
+      'Authorization': `Bearer ${token}`
+    });
+
+    return this.http.post(this.apiUrl, post, { headers });
   }
 
-  createPost(post: { title: string; content: string }) {
-    return this.http.post(this.apiUrl, post);
-  }
-
-  deletePost(id: number) {
-    return this.http.delete(`${this.apiUrl}/${id}`);
+  getAllPosts(): Observable<any[]> {
+    return this.http.get<any[]>(`${this.apiUrl}/view`);
   }
 }

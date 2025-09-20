@@ -34,10 +34,20 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
         String username = null;
         String jwt = null;
 
+        System.out.println("Auth header: " + authHeader);
+
         if (authHeader != null && authHeader.startsWith("Bearer ")) {
             jwt = authHeader.substring(7);
-            username = jwtUtil.extractUsername(jwt);
+            try {
+                username = jwtUtil.extractUsername(jwt);
+            } catch (Exception e) {
+                System.out.println("Lỗi khi giải mã token: " + e.getMessage());
+                // Có thể ghi log hoặc trả response lỗi nếu muốn
+                // Hoặc để filter chain tiếp tục, token invalid nên không xác thực
+            }
         }
+
+        System.out.println("Extracted username: " + username);
 
         if (username != null && SecurityContextHolder.getContext().getAuthentication() == null) {
             UserDetails userDetails = this.userDetailsService.loadUserByUsername(username);
@@ -58,4 +68,5 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
 
         filterChain.doFilter(request, response);
     }
+
 }

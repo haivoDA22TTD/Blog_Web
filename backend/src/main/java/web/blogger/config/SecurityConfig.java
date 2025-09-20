@@ -35,7 +35,8 @@ public class SecurityConfig {
                 .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 .authorizeHttpRequests(auth -> auth
                         .requestMatchers("/api/auth/**").permitAll()
-                        .requestMatchers("/api/posts/view").hasAnyRole("ADMIN", "USER") // cả admin và user đều xem được posts
+                        .requestMatchers("/api/posts/view").permitAll()
+                        .requestMatchers("/api/posts/**").hasRole("ADMIN")
 
                         .anyRequest().authenticated()
                 )
