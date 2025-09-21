@@ -7,7 +7,8 @@
 ## 🛠️ Công nghệ sử dụng
 
 - <img src="https://angular.io/assets/images/logos/angular/angular.svg" width="20" alt="Angular" /> Angular  
-- <img src="https://spring.io/images/icon-spring-boot.svg" width="20" alt="Spring Boot" /> Spring Boot  
+- <img src="https://raw.githubusercontent.com/spring-projects/spring-boot/main/spring-boot-project/spring-boot-docs/src/main/asciidoc/images/spring-boot-logo.png" width="20" alt="Spring Boot" />
+ Spring Boot  
 - <img src="https://www.mysql.com/common/logos/logo-mysql-170x115.png" width="20" alt="MySQL" /> MySQL  
 - <img src="https://www.docker.com/wp-content/uploads/2022/03/Moby-logo.png" width="20" alt="Docker" /> Docker
 
@@ -25,16 +26,10 @@ blog-web/
 ### 👤 Người dùng
 - Đăng ký / Đăng nhập
 - Đọc bài viết
-- Tìm kiếm bài viết
-- Bình luận bài viết
 
-### ✍️ Tác giả (Author)
-- Tạo / cập nhật / xóa bài viết của mình
-- Quản lý bình luận dưới bài viết của mình
 
 ### 🛡️ Admin
-- Quản lý tất cả người dùng
-- Quản lý bài viết và bình luận
+- Tạo / xóa bài viết của mình
 
 ---
 
@@ -46,7 +41,7 @@ blog-web/
 
 - Docker
 - Docker Compose
-- Java 17+ (chỉ nếu build thủ công backend)
+- Java 21+ (chỉ nếu build thủ công backend)
 - Node.js + Angular CLI (chỉ nếu build thủ công frontend)
 
 ---
@@ -61,8 +56,10 @@ npm install
 ng build --configuration production
 ```
 
-### <img src="https://spring.io/images/icon-spring-boot.svg" width="20" alt="Spring Boot" /> Build Backend (Spring Boot)
+###<img src="https://raw.githubusercontent.com/spring-projects/spring-boot/main/spring-boot-project/spring-boot-docs/src/main/asciidoc/images/spring-boot-logo.png" width="20" alt="Spring Boot" />
+ Build Backend (Spring Boot)
 ```bash
+  cd backend
   mvn clean package -DskipTests
 ```
 ### <img src="https://www.docker.com/wp-content/uploads/2022/03/Moby-logo.png" width="20" alt="Docker" /> Lệnh build & chạy bằng Docker
