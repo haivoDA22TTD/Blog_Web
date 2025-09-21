@@ -7,8 +7,8 @@
 ## 🛠️ Công nghệ sử dụng
 
 - <img src="https://angular.io/assets/images/logos/angular/angular.svg" width="20" alt="Angular" /> Angular  
-- <img src="https://raw.githubusercontent.com/spring-projects/spring-boot/main/spring-boot-project/spring-boot-docs/src/main/asciidoc/images/spring-boot-logo.png" width="20" alt="Spring Boot" />
- Spring Boot  
+- <img src="https://imgbin.com/png/ZmmeGyhZ/spring-boot-spring-boot-logo-in-green-png" width="20" alt="Spring Boot" /> Spring Boot
+  
 - <img src="https://www.mysql.com/common/logos/logo-mysql-170x115.png" width="20" alt="MySQL" /> MySQL  
 - <img src="https://www.docker.com/wp-content/uploads/2022/03/Moby-logo.png" width="20" alt="Docker" /> Docker
 
@@ -33,7 +33,6 @@ blog-web/
 
 ---
 
----
 
 ## 🚀 Build & Chạy ứng dụng bằng Docker
 
@@ -46,7 +45,7 @@ blog-web/
 
 ---
 
-## <img src="https://angular.io/assets/images/logos/angular/angular.svg" width="20" alt="Angular" /> Build Frontend (Angular)
+### <img src="https://angular.io/assets/images/logos/angular/angular.svg" width="20" alt="Angular" /> Build Frontend (Angular)
 
 Vào thư mục `frontend`:
 
@@ -56,8 +55,8 @@ npm install
 ng build --configuration production
 ```
 
-###<img src="https://raw.githubusercontent.com/spring-projects/spring-boot/main/spring-boot-project/spring-boot-docs/src/main/asciidoc/images/spring-boot-logo.png" width="20" alt="Spring Boot" />
- Build Backend (Spring Boot)
+## <img src="https://imgbin.com/png/ZmmeGyhZ/spring-boot-spring-boot-logo-in-green-png" width="20" alt="Spring Boot" /> Build Backend (Spring Boot)
+
 ```bash
   cd backend
   mvn clean package -DskipTests
