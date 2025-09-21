@@ -54,7 +54,7 @@ npm install
 ng build --configuration production
 ```
 
-### ![Spring Boot](https://raw.githubusercontent.com/haivoDA22TTD/haivoDA22TTD/main/assets/Spring%20Boot.png width="40") Build Backend (Spring Boot)
+### <img src="https://raw.githubusercontent.com/haivoDA22TTD/haivoDA22TTD/main/assets/Spring%20Boot.png" width="40" alt="Spring Boot" /> Build Backend (Spring Boot)
 
 ```bash
   cd backend
