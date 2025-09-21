@@ -7,7 +7,7 @@
 ## 🛠️ Công nghệ sử dụng
 
 - <img src="https://angular.io/assets/images/logos/angular/angular.svg" width="40" alt="Angular" /> Angular  
-- ![Spring Boot](https://raw.githubusercontent.com/haivoDA22TTD/haivoDA22TTD/main/assets/Spring%20Boot.png width="40") Spring Boot
+- <img src="https://raw.githubusercontent.com/haivoDA22TTD/haivoDA22TTD/main/assets/Spring%20Boot.png" width="40") Spring Boot
 - <img src="https://www.mysql.com/common/logos/logo-mysql-170x115.png" width="40" alt="MySQL" /> MySQL  
 - <img src="https://www.docker.com/wp-content/uploads/2022/03/Moby-logo.png" width="40" alt="Docker" /> Docker
 
