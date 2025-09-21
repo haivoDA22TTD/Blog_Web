@@ -29,7 +29,7 @@ blog-web/
 
 ### 🛡️ Admin
 - Tạo / xóa bài viết của mình
-
+- Đăng ký / Đăng nhập
 ---
 
 
