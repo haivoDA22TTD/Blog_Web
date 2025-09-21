@@ -8,7 +8,7 @@ import web.blogger.service.AuthService;
 
 @RestController
 @RequestMapping("/api/auth")
-@CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin(origins = "http://localhost")
 public class AuthController {
 
     @Autowired

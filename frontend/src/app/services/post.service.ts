@@ -10,17 +10,20 @@ export class PostService {
 
   constructor(private http: HttpClient) {}
 
-  createPost(post: any): Observable<any> {
-    const token = localStorage.getItem('token'); // Bạn đã login rồi đúng không?
+ createPost(post: any, token: string) {
+  const headers = { Authorization: `Bearer ${token}` };
+  return this.http.post<any>(`${this.apiUrl}`, post, { headers });
+}
 
-    const headers = new HttpHeaders({
-      'Authorization': `Bearer ${token}`
-    });
-
-    return this.http.post(this.apiUrl, post, { headers });
-  }
 
   getAllPosts(): Observable<any[]> {
     return this.http.get<any[]>(`${this.apiUrl}/view`);
   }
+  deletePost(id: number, token: string) {
+  const headers = new HttpHeaders({
+    Authorization: `Bearer ${token}`
+  });
+  return this.http.delete(`${this.apiUrl}/${id}`, { headers });
+}
+
 }

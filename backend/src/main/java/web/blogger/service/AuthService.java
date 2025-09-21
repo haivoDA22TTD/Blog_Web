@@ -28,12 +28,12 @@ public class AuthService {
         User user = userRepo.findByUsername(request.getUsername())
                 .orElseThrow(() -> new RuntimeException("User not found"));
 
-        // ✅ kiểm tra mật khẩu
+        // kiểm tra mật khẩu
         if (!passwordEncoder.matches(request.getPassword(), user.getPassword())) {
             throw new RuntimeException("Invalid password");
         }
 
-        String roleName = user.getRole().name().replace("ROLE_", ""); // ADMIN hoặc USER
+        String roleName = user.getRole().name().replace("ROLE_", "");
 
         String token = jwtUtil.generateToken(
                 org.springframework.security.core.userdetails.User

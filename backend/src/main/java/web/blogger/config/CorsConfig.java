@@ -14,7 +14,7 @@ public class CorsConfig {
             @Override
             public void addCorsMappings(CorsRegistry registry) {
                 registry.addMapping("/**") // cho phép tất cả API
-                        .allowedOrigins("http://localhost:4200") // Angular chạy ở cổng 4200
+                        .allowedOrigins("http://localhost") // Angular chạy ở cổng 4200
                         .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS")
                         .allowedHeaders("*")
                         .allowCredentials(true);

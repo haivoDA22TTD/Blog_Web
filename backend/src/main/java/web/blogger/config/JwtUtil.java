@@ -1,11 +1,6 @@
 package web.blogger.config;
 
-import io.jsonwebtoken.Claims;
-import io.jsonwebtoken.ExpiredJwtException;
-import io.jsonwebtoken.Jwts;
-import io.jsonwebtoken.MalformedJwtException;
-import io.jsonwebtoken.SignatureAlgorithm;
-import io.jsonwebtoken.UnsupportedJwtException;
+import io.jsonwebtoken.*;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Component;
@@ -22,7 +17,6 @@ public class JwtUtil {
     @Value("${jwt.secret}")
     private String secretKey;
 
-    // Thời gian token hết hạn (ms) - có thể lấy từ config nếu bạn muốn
     private final long JWT_EXPIRATION = 1000 * 60 * 60 * 10; // 10 tiếng
 
     public String extractUsername(String token) {
@@ -72,7 +66,7 @@ public class JwtUtil {
     private String createToken(Map<String, Object> claims, String subject) {
         long nowMillis = System.currentTimeMillis();
         Date now = new Date(nowMillis);
-        Date exp = new Date(nowMillis + 10 * 60 * 60 * 1000); // 10 tiếng sau
+        Date exp = new Date(nowMillis + JWT_EXPIRATION);
 
         return Jwts.builder()
                 .setClaims(claims)
@@ -83,11 +77,9 @@ public class JwtUtil {
                 .compact();
     }
 
-
-
-    public Boolean validateToken(String token, UserDetails userDetails) {
-        final String username = extractUsername(token);
-        return (username != null && username.equals(userDetails.getUsername()) && !isTokenExpired(token));
+    public Boolean validateToken(String token, String username) {
+        final String extractedUsername = extractUsername(token);
+        return (username.equals(extractedUsername) && !isTokenExpired(token));
     }
 
     public List<String> extractRoles(String token) {
