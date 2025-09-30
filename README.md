@@ -17,7 +17,7 @@
 blog-web/
 ├── backend/ # Spring Boot project
 ├── frontend/ # Angular project
-├── docker-compose.yml # Docker Compose file
+├── docker-compose.yml # Docker Compose 
 └── README.md
 ```
 ## 🧩 Chức năng chính
